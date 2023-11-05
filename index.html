@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Site</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/style.css">
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
+				  
+</head>
+<body>
+    <div class="gallery-arrows"></div>
+
+    <div class="gallery">
+
+        <!-- Second floor -->
+
+        <div class="floor-container">
+            <div class="floor-plan">
+                <div class="room eighth" id="room8" data-image="img/room.png" data-text="Аудиторія №8"></div>
+                <div class="room nineth" id="room9" data-image="img/room.png" data-text="Аудиторія №9"></div>
+                <div class="room tenth" id="room10" data-image="img/room.png" data-text="Аудиторія №10"></div>
+                <div class="room eleventh" id="room11" data-image="img/room.png" data-text="Аудиторія №11"></div>
+                <div class="room library" id="library" data-image="img/library.png" data-text="Бібліотека"></div>
+                <div class="room twelfth" id="room12" data-image="img/room.png" data-text="Аудиторія №12"></div>
+                <div class="room thirteenth" id="room13" data-image="img/room.png" data-text="Аудиторія №13"></div>
+                <div class="room fourteenth" id="room14" data-image="img/room.png" data-text="Аудиторія №14"></div>
+                <div class="room fifteenth" id="room15" data-image="img/room.png" data-text="Аудиторія №15"></div>
+                <div class="room sixteenth" id="room16" data-image="img/room.png" data-text="Аудиторія №16"></div>
+                <div class="room seventeenth" id="room17" data-image="img/room.png" data-text="Аудиторія №17"></div>
+                <div class="room twentieth" id="room20" data-image="img/room.png" data-text="Аудиторія №20"></div>
+            </div>
+
+            <h1>Другий поверх</h1>
+        </div>
+        
+        <!-- First floor -->
+
+        <div class="floor-container">
+            <div class="floor-plan">
+                <div class="room first" id="room1" data-image="img/room.png" data-text="Аудиторія №1"></div>
+                <div class="room second" id="room2" data-image="img/room.png" data-text="Аудиторія №2"></div>
+                <div class="room third" id="room3" data-image="img/room.png" data-text="Аудиторія №3"></div>
+                <div class="room fourth" id="room4" data-image="img/room.png" data-text="Аудиторія №4"></div>
+                <div class="room fifth" id="room5" data-image="img/room.png" data-text="Аудиторія №5"></div>
+                <div class="room sixth" id="room6" data-image="img/room.png" data-text="Аудиторія №6"></div>
+                <div class="room department" id="department" data-image="img/administration.png" data-text="Кафедра"></div>
+                <div class="room rector-office" id="rector-office" data-image="img/administration.png" data-text="Кабінет ректора"></div>
+                <div class="room reception" id="reception" data-image="img/administration.png" data-text="Приймальна"></div>
+                <div class="room dean-office" id="dean-office" data-image="img/administration.png" data-text="Деканат"></div>
+                <div class="room buffet" id="buffet" data-image="img/buffet.png" data-text="Буфет"></div>
+            </div>
+
+            <h1>Перший поверх</h1>
+        </div>
+    </div>
+    
+    <!-- Modal boxes -->
+
+    <div class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img class="modal-image" src="" alt="modal-img">
+            <p class="modal-text"></p>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+
+    <script type="text/javascript">
+        // slick gallery
+        $(document).ready(() => {
+            $('.gallery').slick({
+                arrows: true,
+                initialSlide: 1, // default first floor
+                slidesToShow: 1,
+                vertical: true,
+                infinite: false,
+                appendArrows:'.gallery-arrows',
+                prevArrow:'<button type="button" class="prev">2</button>',
+                nextArrow:'<button type="button" class="next">1</button>',
+            });
+            $(".prev").addClass("slick-disabled");
+            
+            $(".gallery").on("afterChange", function () {
+                if ($(".slick-prev").hasClass("slick-disabled")) {
+                    $(".prev").addClass("slick-disabled");
+                } else {
+                    $(".prev").removeClass("slick-disabled");
+                }
+                if ($(".slick-next").hasClass("slick-disabled")) {
+                    $(".next").addClass("slick-disabled");
+                } else {
+                    $(".next").removeClass("slick-disabled");
+                }
+            });
+        });
+    </script>
+
+    <!-- Modal boxes JS -->
+
+    <script>
+        const items = document.querySelectorAll('.room');
+        const modal = document.querySelector('.modal');
+        const modalImage = document.querySelector('.modal-image');
+        const modalText = document.querySelector('.modal-text');
+         
+        var span = document.getElementsByClassName("close")[0]; 
+
+        items.forEach(item => {
+            item.addEventListener('click', () => {
+                const image = item.dataset.image;
+                const text = item.dataset.text;
+                
+                modalImage.src = image;
+                modalText.textContent = text;
+                modal.style.display = 'block';
+            });
+        });
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        };
+
+        modal.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

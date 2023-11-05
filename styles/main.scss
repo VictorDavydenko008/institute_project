@@ -1,0 +1,284 @@
+$main-color: #E2FDFF;
+$semiBasic-color: #BFD7FF;
+$basic-color: #9BB1FF;
+$ordinary-color: #788BFF;
+$accent-color: #5465FF;
+$text-color: #080808;
+
+$horisontal: 25px;
+$vertical: 20px;
+
+html,
+body{
+    margin: 0;
+    height: 100%;
+    background-color: $main-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}   
+
+.gallery-arrows{
+    margin-right: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 65px;
+    .prev,
+    .next{
+        font-size: 36px;
+        padding: 12px 30px;
+        background-color: $ordinary-color;
+        opacity: 80%;
+        border-radius: 50%;
+        border: none;
+        font-family: 'Anton', sans-serif;
+        color: $main-color;
+        cursor: pointer;
+    }
+
+    .prev:not([aria-disabled="true"]):hover, 
+    .next:not([aria-disabled="true"]):hover {
+        opacity: 100%;
+    }
+
+    [aria-disabled="true"] {
+        opacity: 50%;
+        filter: grayscale(0.4);
+        cursor: default;
+    }
+}
+.gallery{
+    width: 695px;
+    .floor-container{
+        height: 660px;
+        text-align: center; 
+        .floor-plan{
+            height: 618px;
+            position: relative;
+            background-color: $semiBasic-color;
+            border-radius: 32px 32px 0px 0px;  
+            /*
+            background-image: url("../img/first-floor.jpg");
+            background-size: 100% 100%;
+            background-position-x: 3px;
+            background-position-y: -4px;
+            */
+            /*
+            background-image: url("../img/second-floor.jpg");
+            background-size: 100% 100%;
+            */
+            .room {
+                position: absolute;
+                opacity: 40%;
+                background-color: $ordinary-color;
+                cursor: pointer;
+            }
+        } 
+        h1{
+            color: $text-color;
+            font-size: 26px;
+            margin: 0;
+            padding: 6px;
+            border-radius: 0px 0px 32px 32px;
+            background-color: $basic-color;
+        } 
+    }
+}
+.room:hover{
+    opacity: 100% !important;
+    background-color: $accent-color !important;
+}
+
+ /* FIRST FLOOR */
+
+.first {
+    height: 101px;
+    width: 194px;
+    bottom: $horisontal;
+    left: $vertical;
+}
+.second {
+    height: 184px;
+    width: 100px;
+    bottom: 130px;
+    left: $vertical;
+}
+.third {
+    width: 100px;
+    height: 185px;
+    top: $horisontal;
+    left: $vertical;
+}
+.fourth {
+    width: 194px;
+    height: 130px;
+    top: $horisontal;
+    left: 180px;
+}
+.fifth {
+    height: 130px;
+    width: 193px;
+    top: $horisontal;
+    right: 122px;
+}
+.sixth {
+    height: 185px;
+    width: 98px;
+    top: $horisontal;
+    right: $vertical;
+}
+.department {
+    height: 96px;
+    width: 98px;
+    top: 214px;
+    right: $vertical;
+}
+.rector-office{
+    height: 114px;
+    width: 98px;
+    bottom: 190px;
+    right: $vertical;
+}
+.reception{
+    height: 56px;
+    width: 98px;
+    bottom: 130px;
+    right: $vertical;
+}
+.dean-office{
+    height: 101px;
+    width: 194px;
+    bottom: $horisontal;
+    right: $vertical;
+}
+.buffet{
+    height: 168px;
+    width: 96px;
+    top: 210px;
+    left: 300px;
+}  
+
+/* SECOND FLOOR */
+
+.eighth{
+    height: 100px;
+    width: 196px;
+    bottom: $horisontal;
+    left: $vertical;
+}
+.nineth{ 
+    height: 110px;
+    width: 102px;
+    bottom: 129px;
+    left: $vertical;
+}
+.tenth{
+    width: 102px;
+    height: 110px;
+    bottom: 243px;
+    left: $vertical;
+}
+.eleventh{
+    height: 186px;
+    width: 102px;
+    top: $horisontal;
+    left: $vertical;
+}
+.library {
+    height: 100px;
+    width: 184px;
+    top: $horisontal;
+    left: 126px;
+}
+.twelfth{
+    height: 100px;
+    width: 88px;
+    top: $horisontal;
+    right: 211px;
+}
+.thirteenth {
+    height: 100px;
+    width: 88px;
+    top: $horisontal;
+    right: 119px;
+}
+.fourteenth{
+    height: 180px;
+    width: 95px;
+    top: $horisontal;
+    right: $vertical;
+}
+.fifteenth{
+    height: 92px;
+    width: 95px;
+    top: 209px;
+    right: $vertical;
+}
+.sixteenth{
+    height: 134px;
+    width: 95px;
+    bottom: 129px;
+    right: $vertical;
+}
+.seventeenth{
+    height: 100px;
+    width: 196px;
+    bottom: $horisontal;
+    right: $vertical;
+}
+.twentieth{
+    height: 190px;
+    width: 280px;
+    top: 214px;
+    left: 212px;
+}
+
+/* MODAL BOX */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    padding-top: 10%; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    .modal-content {
+        background-color: $main-color;
+        margin: auto;
+        padding: 20px;
+        border: none;
+        width: 505px;
+        border-radius: 16px;
+        text-align: center;
+        font-size: 24px;
+        color: $text-color;
+        font-weight: bold;
+        img {
+            width: 500px;
+            height: 340px;
+            object-fit: cover;
+            background-color: $semiBasic-color;
+            border-radius: 16px;
+        }
+        .close {
+            color: $accent-color;
+            float: right;
+            font-size: 32px;
+            font-weight: bold;
+        }
+    }
+}
+.close:hover,
+.close:focus {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+
+

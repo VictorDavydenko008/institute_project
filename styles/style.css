@@ -1,0 +1,290 @@
+html,
+body {
+  margin: 0;
+  height: 100%;
+  background-color: #E2FDFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery-arrows {
+  margin-right: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 65px;
+}
+.gallery-arrows .prev,
+.gallery-arrows .next {
+  font-size: 36px;
+  padding: 12px 30px;
+  background-color: #788BFF;
+  opacity: 80%;
+  border-radius: 50%;
+  border: none;
+  font-family: "Anton", sans-serif;
+  color: #E2FDFF;
+  cursor: pointer;
+}
+.gallery-arrows .prev:not([aria-disabled=true]):hover,
+.gallery-arrows .next:not([aria-disabled=true]):hover {
+  opacity: 100%;
+}
+.gallery-arrows [aria-disabled=true] {
+  opacity: 50%;
+  filter: grayscale(0.4);
+  cursor: default;
+}
+
+.gallery {
+  width: 695px;
+}
+.gallery .floor-container {
+  height: 660px;
+  text-align: center;
+}
+.gallery .floor-container .floor-plan {
+  height: 618px;
+  position: relative;
+  background-color: #BFD7FF;
+  border-radius: 32px 32px 0px 0px;
+  /*
+  background-image: url("../img/second-floor.jpg");
+  background-size: 100% 100%;
+  */
+  /*
+  background-image: url("../img/first-floor.jpg");
+  background-size: 100% 100%;
+  background-position-x: 3px;
+  background-position-y: -4px;
+  */
+}
+.gallery .floor-container .floor-plan .room {
+  position: absolute;
+  opacity: 40%;
+  background-color: #788BFF;
+  cursor: pointer;
+}
+.gallery .floor-container h1 {
+  color: #080808;
+  font-size: 26px;
+  margin: 0;
+  padding: 6px;
+  border-radius: 0px 0px 32px 32px;
+  background-color: #9BB1FF;
+}
+
+.room:hover {
+  opacity: 100% !important;
+  background-color: #5465FF !important;
+}
+
+/* FIRST FLOOR */
+.first {
+  height: 101px;
+  width: 194px;
+  bottom: 25px;
+  left: 20px;
+}
+
+.second {
+  height: 184px;
+  width: 100px;
+  bottom: 130px;
+  left: 20px;
+}
+
+.third {
+  width: 100px;
+  height: 185px;
+  top: 25px;
+  left: 20px;
+}
+
+.fourth {
+  width: 194px;
+  height: 130px;
+  top: 25px;
+  left: 180px;
+}
+
+.fifth {
+  height: 130px;
+  width: 193px;
+  top: 25px;
+  right: 122px;
+}
+
+.sixth {
+  height: 185px;
+  width: 98px;
+  top: 25px;
+  right: 20px;
+}
+
+.department {
+  height: 96px;
+  width: 98px;
+  top: 214px;
+  right: 20px;
+}
+
+.rector-office {
+  height: 114px;
+  width: 98px;
+  bottom: 190px;
+  right: 20px;
+}
+
+.reception {
+  height: 56px;
+  width: 98px;
+  bottom: 130px;
+  right: 20px;
+}
+
+.dean-office {
+  height: 101px;
+  width: 194px;
+  bottom: 25px;
+  right: 20px;
+}
+
+.buffet {
+  height: 168px;
+  width: 96px;
+  top: 210px;
+  left: 300px;
+}
+
+/* SECOND FLOOR */
+.eighth {
+  height: 100px;
+  width: 196px;
+  bottom: 25px;
+  left: 20px;
+}
+
+.nineth {
+  height: 110px;
+  width: 102px;
+  bottom: 129px;
+  left: 20px;
+}
+
+.tenth {
+  width: 102px;
+  height: 110px;
+  bottom: 243px;
+  left: 20px;
+}
+
+.eleventh {
+  height: 186px;
+  width: 102px;
+  top: 25px;
+  left: 20px;
+}
+
+.library {
+  height: 100px;
+  width: 184px;
+  top: 25px;
+  left: 126px;
+}
+
+.twelfth {
+  height: 100px;
+  width: 88px;
+  top: 25px;
+  right: 211px;
+}
+
+.thirteenth {
+  height: 100px;
+  width: 88px;
+  top: 25px;
+  right: 119px;
+}
+
+.fourteenth {
+  height: 180px;
+  width: 95px;
+  top: 25px;
+  right: 20px;
+}
+
+.fifteenth {
+  height: 92px;
+  width: 95px;
+  top: 209px;
+  right: 20px;
+}
+
+.sixteenth {
+  height: 134px;
+  width: 95px;
+  bottom: 129px;
+  right: 20px;
+}
+
+.seventeenth {
+  height: 100px;
+  width: 196px;
+  bottom: 25px;
+  right: 20px;
+}
+
+.twentieth {
+  height: 190px;
+  width: 280px;
+  top: 214px;
+  left: 212px;
+}
+
+/* MODAL BOX */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2;
+  padding-top: 10%; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+.modal .modal-content {
+  background-color: #E2FDFF;
+  margin: auto;
+  padding: 20px;
+  border: none;
+  width: 505px;
+  border-radius: 16px;
+  text-align: center;
+  font-size: 24px;
+  color: #080808;
+  font-weight: bold;
+}
+.modal .modal-content img {
+  width: 500px;
+  height: 340px;
+  object-fit: cover;
+  background-color: #BFD7FF;
+  border-radius: 16px;
+}
+.modal .modal-content .close {
+  color: #5465FF;
+  float: right;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=style.css.map */
